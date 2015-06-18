@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+#Cloning repo
+git clone git@github.com:rafaelcamargo/ng-rise.git;
+
+#Acessing project
+cd ng-rise;
+
+#Removing installing script
+rm -rf install;
+
+#Installing dev dependencies
+npm install;
+
+#Installing app dependencies
+grunt build;
+
+# getting current open browser command
+case $( uname -s ) in
+Darwin)  open=open;;
+MINGW*)  open=start;;
+CYGWIN*) open=cygstart;;
+*)       open=xdg-open;;
+esac
+
+#Opening app
+$open http://localhost:3000/;
+
+#Starting dev mode
+grunt start;
