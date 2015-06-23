@@ -42,7 +42,11 @@ module.exports = function(grunt) {
 	    },
 	    lib : {
   			files : {
-  				'assets/js/lib.min.js' : [pathLibs + 'angular/angular.min.js', pathLibs + 'angular-route/angular-route.min.js']
+  				'assets/js/lib.min.js' : [
+            pathLibs + 'angular/angular.min.js',
+            pathLibs + 'angular-route/angular-route.min.js',
+            pathLibs + 'angular-resource/angular-resource.min.js',
+          ]
   			}
 	    }
   	},
@@ -64,7 +68,10 @@ module.exports = function(grunt) {
           {
             expand: true,
             flatten: true,
-            src: ['bower_components/angular-route/angular-route.min.js.map'], dest: 'assets/js/'
+            src: [
+              'bower_components/angular-route/angular-route.min.js.map',
+              'bower_components/angular-resource/angular-resource.min.js.map'
+            ], dest: 'assets/js/'
           }
         ],
       },
