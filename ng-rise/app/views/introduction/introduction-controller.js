@@ -1,17 +1,10 @@
 ;(function(app){
 
-  app.controller('introductionController', ['$scope', 'TestService', function($scope, TestService){
+  app.controller('introductionController', ['$scope', function($scope){
 
     $scope.title = 'ng-rise';
-    TestService.get({}, success, error);
-
-    function success(response) {
-    	$scope.message = response;
-    }
-
-    function error(response) {
-    	$scope.message = response;
-    }
+    $scope.message = 'Well done, your angular base app is up and running. Enjoy!';
 
   }]);
+
 })(app);
